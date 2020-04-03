@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Destiny App</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="destiny-app"> 
+  <div v-for="card in cards">
+  
+  <div class="card" v-bind:class="card.color">
+    <!--img goes here-->
+    <img v-bind:src="card.img"></img>  
+    <div class="health">{{card.health}}</div>
+    <div class="rarity" v-bind:class="{rare:card.rarity, legendary:!card.rarity}">{{card.setNumber}} </div>
+    <div class="name">{{card.name}}</div>
+    <div class="affl" v-bind:class="card.affl">{{card.affl}}</div>
+    <!--The lowercase villian and hero were bothering me so I changed them to capital letters in the CSS and JS. I was going to try to figure out how to change them to uppercase on HTML but today is my birthday, so I decided against it. I also messed around with putting the image entirely behind all the elements but it was looking really weird with some of the images such as cutting off the General's head. All in all a fun project!-->
+  </div>
+ </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
